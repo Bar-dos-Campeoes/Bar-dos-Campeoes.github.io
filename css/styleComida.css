@@ -72,7 +72,7 @@ body {
   color: #2c3e50;
   text-align: center;
   width: 100%;
-  font-size: clamp(0.85rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.85rem, 1.8vw, 1.1rem);
   font-weight: 400;
   letter-spacing: -0.01em;
 }
@@ -98,3 +98,4 @@ body {
     height: 260px;
   }
 }
+
