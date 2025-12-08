@@ -1,0 +1,76 @@
+.entradas {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #5D3A00;
+  display: block;       /* ocupa largura total */
+  text-align: center;   /* centraliza conteúdo */
+}
+
+
+.entradas span {
+  display: inline-block;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  text-align: center;
+  
+}
+
+.principal {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #5D3A00;
+  display: block;       /* ocupa largura total */
+  text-align: center;   /* centraliza conteúdo */
+}
+
+
+.principal span {
+  display: inline-block;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  text-align: center;
+  
+}
+
+.sobremesa {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #5D3A00;
+  display: block;
+  text-align: center;
+}
+
+.sobremesa span {
+  display: inline-block;
+  transition: opacity 0.5s ease;
+}
+
+
+/* estilo da palavra bebida */
+.bebida {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #5D3A00;
+  display: block;
+  text-align: center;
+}
+
+/* estilo de cada letra */
+.bebida span,
+#bebida span {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* animação */
+.slide-down {
+  opacity: 0 !important;
+  transform: translateY(25px) !important;
+}
+
+
