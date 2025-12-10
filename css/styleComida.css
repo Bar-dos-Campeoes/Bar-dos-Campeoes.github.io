@@ -1,102 +1,89 @@
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Roboto, sans-serif;
-  background-color: wheat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* ------------- GLOBAL ------------- */
 
 * {
   box-sizing: border-box;
 }
 
-/* ---------------- FLEX CONTAINER ---------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Roboto, sans-serif;
+  background: wheat;
+}
+
+/* ------------- CONTAINER ------------- */
 
 .container {
-  width: 100%;
-  max-width: 1600px;
   display: flex;
-  flex-wrap: wrap;         /* permite quebrar linha */
-  justify-content: center; /* centra horizontalmente */
-  gap: 30px;               /* espaço entre as bolas */
-  padding-bottom: 5%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(15px, 4vw, 40px);
+  padding: 2rem 1rem;
+  width: 100%;
 }
 
-/* ---------------- CARD (BOLA) ---------------- */
+/* ------------- CARD ------------- */
 
 .card-left {
+  flex: 1 1 clamp(220px, 28vw, 260px);
+  max-width: 260px; /* limite máximo para não ficar gigante */
+  aspect-ratio: 1/1;
   display: flex;
-  flex-direction: row;
-  width: 260px;
-  height: 260px;
-  border-radius: 30%;
-  background: white;
+  border-radius: 25%;
   overflow: hidden;
-  box-shadow: 0px 2px 4px rgba(0, 10, 20, 0.1);
-
-  
-
+  background: white;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+  min-width: 210px;
 }
 
-/* Imagem ocupa metade da bola */
-.card-left .card-image {
-  width: 50%;
-  height: 100%;
+/* layout dentro do card */
+.card-image {
+  flex: 1 1 50%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
-/* Texto ocupa a outra metade */
-.card-left .card-text {
-  width: 50%;
-  height: 100%;
+.card-text {
+  flex: 1 1 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;
-  background: white;
+  padding: clamp(10px, 2vw, 20px);
+  text-align: center;
 }
 
 .card-text p {
   margin: 0;
-  line-height: 1.5;
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
   color: #2c3e50;
-  text-align: center;
-  width: 100%;
-  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 500;
 }
 
-/* ---------------- MOBILE ---------------- */
+/* ------------- MOBILE ------------- */
 
-@media only screen and (max-width: 600px) {
-  body {
-    justify-content: flex-start;
-    align-items: center;
-  }
+@media (max-width: 600px) {
 
   .container {
-    width: 100%;
-    padding: 10px;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+      padding: 1rem 0.5rem;
+      gap: 20px;
   }
 
   .card-left {
-    width: 260px;
-    height: 260px;
+      flex: 1 1 260px;
+      max-width: 260px;
+      aspect-ratio: 1/1;
+  }
+
+  .card-text p {
+      font-size: 1rem;
   }
 }
-
-
