@@ -2,50 +2,59 @@
 .caixaPrincipal{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* coloca esquerda e direita nas extremidades */
+    justify-content: space-between; 
     width: 100%;
-    padding: 10%;
-    margin-top: 50px; /* 👍 afasta das bordas do topo */
+
+    align-items: center;
+
+    background-color: #226f54;
+
+    border-bottom-left-radius: 20px;   /* arredonda canto inferior esquerdo */
+    border-bottom-right-radius: 20px;  /* arredonda canto inferior direito */
 }
 
-.caixaDireita{
-    background-color: white;
-    width: 350px;
-    height: 350px;
-    border-radius: 30%;
-    display: flex;                 /* <-- isto centra */
-    flex-direction: column;        /* coloca texto em coluna */
-    justify-content: center;       
-    align-items: center;           
+.caixaDireita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: left;
-    padding: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-}
+    color: white;
+    
+    margin-right: 5%;
 
+    flex: 1 1 clamp(250px, 35%, 550px); /* tamanho base responsivo */
+    height: clamp(300px, 40vh, 600px);
+
+    max-width: 550px;
+    min-width: 250px;
+
+    /* 🎨 Efeito vidro */
+    background: rgba(255, 255, 255, 0.12); /* leve transparência */
+    backdrop-filter: blur(12px);           /* desfoca o fundo */
+    -webkit-backdrop-filter: blur(12px);   /* suporte Safari */
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* brilho suave */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* sombra suave */
+
+}
 
 .caixaEsquerda {
-    background-color: white;
-    width: 350px;
-    height: 350px;
-    border-radius: 30%;
-    display: flex;                 /* <-- isto centra */
-    flex-direction: column;        /* coloca texto em coluna */
-    justify-content: center;       /* centra verticalmente */
-    align-items: center;           /* centra horizontalmente */
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    flex: 1 1 clamp(250px, 35%, 550px);
+    max-width: 550px;
+    min-width: 250px;
+    
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;      
+
 }
 
 .caixaEsquerda img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* Faz com que a imagem se ajuste sem distorcer */
+    object-fit: contain;  
 }
-
-/*Tentativa de aprofundar as caixas*/
-
-
 
 
 .telefone {
@@ -67,7 +76,6 @@
 }
 
 
-/* Caixa geral */
 .linguas {
     top: 20px;
     left: 20px;
@@ -76,28 +84,27 @@
     z-index: 999;
 }
 
-/* Botão principal (bandeira + seta) */
+
 .linguas {
-    position: fixed; /* para manter a posição fixa na tela */
-    right: 20px;     /* alinha o botão à direita da página */
-    top: 20px;       /* ajusta a distância do topo, se necessário */
-    display: inline-block; /* mantém o tamanho correto */
+    position: fixed; 
+    right: 20px;     
+    top: 20px;       
+    display: inline-block; 
 }
 
-/* Opções de línguas */
+
 .linguas-opcoes {
-    position: absolute;  /* deixa de empurrar o layout */
-    top: 100%;           /* aparece logo abaixo do botão */
+    position: absolute;  
+    top: 100%;           
     left: 0;
-    background: white;   /* para ficar visível */
+    background: white;   
     display: none;
     padding: 5px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    z-index: 999;        /* fica por cima de tudo */
+    z-index: 999;       
 }
 
-/* Mostrar ao passar o rato */
 .linguas:hover .linguas-opcoes {
     display: block;
 }

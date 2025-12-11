@@ -1,75 +1,87 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Função genérica para animar letras
-    function animarLetras(id, indices) {
-      const titulo = document.getElementById(id);
+  // ================
+  // Função base
+  // ================
+  function animarLetrasGenerico(elementId, indices) {
+      const titulo = document.getElementById(elementId);
       if (!titulo) return;
-  
-      const texto = titulo.textContent;
+
+      const texto = titulo.textContent; // mantém espaços
       titulo.textContent = "";
-  
-      // Criar spans
-      const letras = texto.split("").map((letra) => {
-        const span = document.createElement("span");
-        span.textContent = letra;
-        titulo.appendChild(span);
-        return span;
+
+      const letras = texto.split("").map((char) => {
+          const span = document.createElement("span");
+          span.textContent = char === " " ? "\u00A0" : char; // mantém espaço visível
+          titulo.appendChild(span);
+          return span;
       });
-  
+
       let toggle = true;
-  
+
       function animar() {
-        indices.forEach((i, indexAnim) => {
-          setTimeout(() => {
-            if (letras[i]) {
-              letras[i].style.opacity = toggle ? "0" : "1";
-            }
-          }, indexAnim * 200);
-        });
-        toggle = !toggle;
+          indices.forEach((i, idx) => {
+              setTimeout(() => {
+                  if (letras[i]) letras[i].style.opacity = toggle ? "0" : "1";
+              }, idx * 200);
+          });
+          toggle = !toggle;
       }
-  
+
       animar();
       setInterval(animar, 2000);
-    }
-  
-    // 🍽️ Entradas → 3 primeiras letras
-    animarLetras("entradas", [0, 1, 2]);
-  
-    // 🍛 Prato Principal → 6 letras do meio
-    const principalEl = document.getElementById("principal");
-    if (principalEl) {
-      const textoPrincipal = principalEl.textContent.trim();
-      const len = textoPrincipal.length;
-      const meio = Math.floor(len / 2);
-  
-      const indicesPrincipal = [
-        meio - 3, meio - 2, meio - 1,
-        meio,
-        meio + 1, meio + 2
-      ];
-  
-      animarLetras("principal", indicesPrincipal);
-    }
-  
-    // 🍰 Sobremesa → últimas 4 letras
-    const sobremesaEl = document.getElementById("sobremesa");
-    if (sobremesaEl) {
-      const texto = sobremesaEl.textContent.trim();
+  }
+
+  // ===========================
+  // Função para Entradas
+  // ===========================
+  function animarEntradas() {
+      animarLetrasGenerico("entradas", [0, 1, 2]);
+  }
+
+  // ===========================
+  // Função para Prato Principal
+  // ===========================
+  function animarPrincipal() {
+      const principal = document.getElementById("principal");
+      if (!principal) return;
+
+      const texto = principal.textContent;
       const len = texto.length;
-  
-      // Últimos 4 índices
-      const indicesSobremesa = [
-        len - 4,
-        len - 3,
-        len - 2,
-        len - 1
+      const meio = Math.floor(len / 2);
+
+      const indices = [
+          meio - 3, meio - 2, meio - 1,
+          meio,
+          meio + 1, meio + 2
       ];
-  
-      animarLetras("sobremesa", indicesSobremesa);
-    }
-  
-  });
+
+      animarLetrasGenerico("principal", indices);
+  }
+
+  // ===========================
+  // Função para Sobremesa
+  // ===========================
+  function animarSobremesa() {
+      const sobremesa = document.getElementById("sobremesa");
+      if (!sobremesa) return;
+
+      const texto = sobremesa.textContent;
+      const len = texto.length;
+
+      const indices = [len - 4, len - 3, len - 2, len - 1];
+
+      animarLetrasGenerico("sobremesa", indices);
+  }
+
+  // ===========================
+  // Inicializar todas
+  // ===========================
+  animarEntradas();
+  animarPrincipal();
+  animarSobremesa();
+
+});
 
   
   function animarBebida() {

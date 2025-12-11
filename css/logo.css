@@ -1,5 +1,5 @@
 .entradas {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Times New Roman', serif;
   font-size: 3rem;
   font-weight: 900;
   color: #5D3A00;
@@ -17,7 +17,7 @@
 }
 
 .principal {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Times New Roman', serif;
   font-size: 3rem;
   font-weight: 900;
   color: #5D3A00;
@@ -35,7 +35,7 @@
 }
 
 .sobremesa {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Times New Roman', serif;
   font-size: 3rem;
   font-weight: 900;
   color: #5D3A00;
@@ -51,7 +51,7 @@
 
 /* estilo da palavra bebida */
 .bebida {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Times New Roman', serif;
   font-size: 3rem;
   font-weight: 900;
   color: #5D3A00;
