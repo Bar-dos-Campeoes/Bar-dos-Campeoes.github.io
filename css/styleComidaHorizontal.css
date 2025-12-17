@@ -1,0 +1,60 @@
+/* CONTAINER — centra o card no ecrã */
+.container_horizonte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(15px, 4vw, 40px);
+
+    width: 100%;
+}
+
+/* CARD */
+.card-left_horizonte {
+    display: flex;
+    flex-direction: column;
+
+    width: clamp(260px, 35vw, 420px);
+    min-height: 500px;
+    max-height: 600px;
+
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEM — sempre metade do card */
+.card-image_horizonte {
+    flex: 0 0 50%;
+    overflow: hidden;
+    display: flex;
+}
+
+/* IMAGEM CORTADA CORRETAMENTE */
+.card-image_horizonte img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+}
+
+/* TEXTO — ocupa o resto sem cortar */
+.card-text_horizonte {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 2vw, 20px);
+
+    text-align: left;
+}
+
+/* TEXTO */
+.card-text_horizonte p {
+    margin: 0;
+    font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+
+    color: #2c3e50;
+    font-weight: 500;
+}
+

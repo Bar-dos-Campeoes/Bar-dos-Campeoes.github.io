@@ -58,7 +58,7 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: clamp(10px, 2vw, 20px);
-  text-align: center;
+  text-align: left;
 }
 
 .card-text p {
@@ -68,22 +68,4 @@ html, body {
   font-weight: 500;
 }
 
-/* ------------- MOBILE ------------- */
 
-@media (max-width: 600px) {
-
-  .container {
-      padding: 1rem 0.5rem;
-      gap: 20px;
-  }
-
-  .card-left {
-      flex: 1 1 260px;
-      max-width: 260px;
-      aspect-ratio: 1/1;
-  }
-
-  .card-text p {
-      font-size: 1rem;
-  }
-}
