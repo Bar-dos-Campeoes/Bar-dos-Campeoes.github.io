@@ -7,8 +7,8 @@
 
     align-items: center;
 
-    background-color: #226f54;
 
+    background-image: linear-gradient(to top, #226f54, #317c60, #3e896c, #4c9679, #59a386); 
     border-bottom-left-radius: 20px;   /* arredonda canto inferior esquerdo */
     border-bottom-right-radius: 20px;  /* arredonda canto inferior direito */
 }
@@ -39,6 +39,22 @@
 
     font-size: clamp(1rem, 2vw, 1.2rem);
 }
+
+.pagamento {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 2px;
+}
+
+.pagamento img {
+    height: 40px;      /* tamanho correto */
+    width: auto;       /* mantém proporção */
+    object-fit: contain;
+}
+
+
 
 .caixaEsquerda {
     flex: 1 1 clamp(250px, 35%, 550px);
@@ -121,6 +137,24 @@
     opacity: 0.7;
 }
 
+.verEmenta {
+  position: fixed; /* Fixa o botão na tela */
+  bottom: 20px;    /* Distância do fundo da tela */
+  right: 20px;     /* Distância da borda direita */
+  background-color: #226f54;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000; /* Para ficar acima de outros elementos */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.verEmenta:hover {
+  background-color: rgba(255,230,130,0.9);
+}
 
 @media only screen and (max-width: 900px) {
     body {

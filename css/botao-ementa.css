@@ -1,4 +1,4 @@
-.btn-ementa {
+#btn-ementa {
     margin-top: 24px;
 
     padding: 14px 28px;
@@ -28,19 +28,19 @@
     transition: all 0.25s ease;
 }
 
-.btn-ementa:hover {
+#btn-ementa:hover {
     background: rgba(34, 111, 84, 0.9);
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
 
-.btn-ementa:active {
+#btn-ementa:active {
     transform: translateY(0);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 900px) {
-    .btn-ementa {
+    #btn-ementa {
         width: 90%;
         text-align: center;
         font-size: 0.95rem;

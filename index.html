@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/styleComidaHorizontal.css">
 	<link rel="stylesheet" href="css/botao-ementa.css">
+	<link rel="stylesheet" href="css/textoInicial.css">
 
 	<!-- Favicon padrão -->
 	<!-- SEO básico -->
@@ -31,7 +32,12 @@
 	<meta property="og:image" content="https://bar-dos-campeoes.github.io/logo_2.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-	
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  	<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
 
 
 
@@ -119,9 +125,25 @@
 				</p>
 			</div>
 
+			<div class="pagamento">
+				<img src="Fotos/mbway.webp" alt="mbway" />
+				<img src="Fotos/multi.webp" alt="multibanco" />
+			</div>
+
 		</div>
 	</div>
-	
+
+	<div class="textoInicial">
+	<h3>Um excelente ano de 2026 🍾🍾</h3>
+	<p>
+		Agradecemos a vossa presença ao longo dos anos.<br>
+		Recorde-se: nesta casa, do que há não falta nada!
+	</p>
+	</div>
+
+
+	<button class="verEmenta" onclick="scrollToMenu()">Ver o menu completo ↓</button>
+		
 
 	<div>
 		<p class="entradas">Prato do dia</p>
@@ -567,7 +589,7 @@
 		</div>
 
 
-		<p class="sobremesa" id="sobremesa">Final Feliz</p>
+		<p class="sobremesa" id="sobremesa">Oh doce, era onde fosse...</p>
 		
 
 		<div class="container">
@@ -663,15 +685,16 @@
 				<img src="https://img.freepik.com/fotos-premium/copos-de-refrigerante-sabores-laranja-limao-e-cola_434193-5631.jpg" alt="" />
 				</div>
 				<div class="card-text">
-				<p>Regrigirantes</p>
+				<p>Sumos</p>
 				</div>
 			</div>
+			
 		</div>
 	</div>
-	<script src="js/scripts.js"></script>
+	
 
 	<a href="https://bar-dos-campeoes.github.io/Bar-dos-Campeoes-ementa.github.io/"
-		class="btn-ementa"
+		id="btn-ementa"
 		target="_blank"
 		rel="noopener noreferrer">
 		Ver ementa & preçário completo
@@ -704,7 +727,7 @@
 			<p>&copy; 2025 Bar dos Campeoes. Todos os direitos reservados.</p>
 		</div>
 	</footer>
-
+	<script src="js/scripts.js"></script>
 
 </body>
 </html>
