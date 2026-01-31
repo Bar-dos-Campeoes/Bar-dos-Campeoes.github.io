@@ -1,0 +1,279 @@
+:root{
+  /* Fundo do site */
+  --bg: #f5deb3;
+
+  /* Texto global (para fundo claro) */
+  --text: #0b0b0b;
+  --muted: rgba(0,0,0,.70);
+
+  /* Dourado */
+  --gold: #A1954E;
+
+  /* UI */
+  --border: rgba(0,0,0,.12);
+  --card: rgba(255,255,255,.35);
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HERO */
+.hero{
+  position: relative;
+  height: clamp(420px, 65vh, 620px);
+  display: grid;
+  place-items: center;
+  padding: 56px 18px;
+
+  background-image: url("../Fotos/hero-bar.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay para dar contraste ao texto, mas sem matar a foto */
+.hero__overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.28) 45%,
+    rgba(0,0,0,.60) 100%
+  );
+}
+
+/* fade para o fundo wheat */
+.hero__bottomFade{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 120px;
+  background: linear-gradient(180deg, rgba(245,222,179,0), rgba(245,222,179,1));
+}
+
+.hero__content{
+  position: relative;
+  width: min(980px, 100%);
+  text-align: center;
+  padding: 18px;
+
+  /* vidro */
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 22px;
+}
+
+.hero__logo{
+  width: 96px;
+  height: auto;
+  margin: 0 auto 18px;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.45));
+}
+
+.hero__title{
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  letter-spacing: .3px;
+  color: #ffffff;
+  text-shadow: 0 10px 24px rgba(0,0,0,.55);
+}
+
+.hero__subtitle{
+  margin: 12px auto 26px;
+  width: min(720px, 100%);
+  color: rgba(255,255,255,.90);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.5;
+  text-shadow: 0 10px 24px rgba(0,0,0,.50);
+}
+
+/* BOTÕES */
+.hero__actions{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+
+  /* vidro mais claro */
+  background: rgba(255,255,255,.36);
+  border: 1px solid rgba(255,255,255,.50);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.14),
+    inset 0 1px 0 rgba(255,255,255,.22);
+
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  transition: transform .12s ease, background .18s ease, border-color .18s ease;
+}
+
+.btn:active{ transform: translateY(1px); }
+
+.btn:hover{
+  background: rgba(255,255,255,.52);
+  border-color: rgba(255,255,255,.65);
+}
+
+/* botão principal (dourado vidro) */
+.btn--primary{
+  background: rgba(161,149,78,.55);
+  border-color: rgba(161,149,78,.70);
+  color: #0b0b0b;
+}
+
+.btn--primary:hover{
+  background: rgba(161,149,78,.70);
+  border-color: rgba(161,149,78,.85);
+}
+
+/* ghost */
+.btn--ghost{
+  background: rgba(255,255,255,.38);
+  border-color: rgba(255,255,255,.55);
+  color: #0b0b0b;
+}
+
+.btn--ghost:hover{
+  background: rgba(255,255,255,.60);
+  border-color: rgba(255,255,255,.75);
+}
+
+/* ✅ no HERO queremos texto branco nos botões */
+.hero .btn{
+  color: #ffffff;
+  border-color: rgba(255,255,255,.35);
+}
+
+.hero .btn--primary{
+  color: #0b0b0b; /* dourado fica melhor com texto escuro */
+}
+
+/* SEÇÕES */
+.section{
+  padding: 56px 18px;
+}
+
+.section__inner{
+  width: min(980px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section__title{
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 2.4vw, 2rem);
+  color: #0b0b0b;
+}
+
+.section__text{
+  margin: 0 0 22px;
+  color: var(--muted);
+}
+
+.section--dark{
+  padding-top: 24px;
+  padding-bottom: 72px;
+}
+
+/* CARDS */
+.cards{
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 20px;
+  padding: 18px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.35);
+
+  /* ✅ centrar tudo */
+  text-align: center;
+}
+
+.card__title{
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 1.15rem;
+}
+
+.card__line{
+  margin: 8px 0;
+  color: var(--text);
+}
+
+.card__line a{
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.25);
+  padding-bottom: 2px;
+}
+
+.card__line a:hover{
+  border-bottom-color: rgba(161,149,78,.85);
+}
+
+.card__small{
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* ✅ centrar botões dentro do card */
+.card__actions{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 760px){
+  .cards{ grid-template-columns: 1fr; }
+
+  .hero{
+    height: 440px;
+    min-height: unset;
+    padding: 40px 14px;
+  }
+
+  .hero__content{
+    padding: 14px;
+  }
+}
